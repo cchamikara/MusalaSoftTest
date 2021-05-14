@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "1832be47-2168-4479-884f-d0a44317844d",
+		"name": "musala-gateway",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "listAllGateways",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/gateways",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"gateways"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getGateway",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/gateways/5fac287788f086006ff53a96",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"gateways",
+						"5fac287788f086006ff53a96"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createGateway",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"serialNumber\": \"xx\",\n  \"name\": \"Gateway test\",\n  \"ip\": \"172.16.254.1\",\n  \"devices\": [\n      {\n          \"uid\": 1,\n          \"vendor\": \"apple\",\n          \"status\": \"online\"\n      },\n      {\n          \"uid\": 2,\n          \"vendor\": \"google\",\n          \"status\": \"online\"\n      },\n      {\n          \"uid\": 3,\n          \"vendor\": \"ibm\"\n      },\n      {\n          \"uid\": 4,\n          \"vendor\": \"apple\",\n          \"status\": \"online\"\n      },\n      {\n          \"uid\": 5,\n          \"vendor\": \"google\",\n          \"status\": \"online\"\n      },\n      {\n          \"uid\": 6,\n          \"vendor\": \"ibm\"\n      },\n      {\n          \"uid\": 7,\n          \"vendor\": \"google\",\n          \"status\": \"online\"\n      },\n      {\n          \"uid\": 8,\n          \"vendor\": \"ibm\"\n      },\n      {\n          \"uid\": 9,\n          \"vendor\": \"ibm\"\n      },\n      {\n          \"uid\": 10,\n          \"vendor\": \"ibm\"\n      }\n  ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/gateways",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"gateways"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addDeviceToGateway",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"uid\": 11,\n    \"vendor\": \"last item\",\n    \"status\": \"online\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/gateways/5fac287788f086006ff53a96/device",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"gateways",
+						"5fac287788f086006ff53a96",
+						"device"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "removeDeviceFromGateway",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"5fac287788f086006ff53aa0\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/gateways/5fac287788f086006ff53a96/device",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"gateways",
+						"5fac287788f086006ff53a96",
+						"device"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "removeGateway",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/gateways/5fac287788f086006ff53a96/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"gateways",
+						"5fac287788f086006ff53a96",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
